@@ -1,17 +1,27 @@
 body {
     background: #F1F2B5; /* fallback for old browsers */    
-    background: -webkit-linear-gradient(right, #F1F2B5, #135058);
+    /*background: -webkit-linear-gradient(right, #F1F2B5, #135058);
     background: -moz-linear-gradient(right, #F1F2B5, #135058);
     background: -o-linear-gradient(right, #F1F2B5, #135058);
     background: linear-gradient(to left, #F1F2B5, #135058); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     text-align: center;
-    color: #fff;
+    color: gray;
         
 }
 
 h1 {
     margin-top: 50px;
+    transition: color .3s ease;
+}
+h1.hot {
+    color: red;
+}
+h1.cold {
+    color: dodgerblue;
+}
+h1.fine {
+    color: lightslategray;
 }
 h2 {
     padding-top: 20px;

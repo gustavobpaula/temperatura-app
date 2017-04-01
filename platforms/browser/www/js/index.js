@@ -41,9 +41,19 @@ var app = {
         console.log('Received Event: ' + id);
 
         setInterval(function(){
-            $.get( "http://192.168.0.19:3000/temperatura", function( data ) {
-                console.log(data);
-                $( ".temperatura" ).html( data );
+            $.get( "http://192.168.43.205:3000/temperatura", function( data ) {
+                data = parseInt(data);
+                if(data <= 21) {
+                    $( ".temperatura" ).removeClass('hot fine').addClass('cold');
+                }
+                if(data > 21 && data < 23) {
+                    $( ".temperatura" ).removeClass('hot cold').addClass('fine');
+                }
+                if(data > 23) {
+                    $( ".temperatura" ).removeClass('fine cold').addClass('hot');
+                }
+
+                $( ".temperatura" ).html( data + " °C");
             });
         }, 1000);
     }
